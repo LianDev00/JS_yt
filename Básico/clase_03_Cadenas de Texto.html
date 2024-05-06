@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 3</title>
+  </head>
+  <body>
+    <h2>Cadenas de Texto</h2>
+    <script>
+      // Cadenas de Texto, aka Strings
+      let nombre = "Lian";
+      let apellido = "Corper";
+      let saludo = new String("Hola Mundo");
+      let lorem =
+        "       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa non provident optio veniam eveniet quae eligendi laborum. Minus impedit ullam quod molestias itaque tenetur, illo dolorum reprehenderit qui, at deleniti!"      ;
+
+      console.log(nombre, apellido, saludo);
+      console.log(nombre.length, apellido.length, saludo.length);
+      console.log(nombre.toUpperCase());
+      console.log(apellido.toLowerCase());
+      console.log("---------------------------------------------------")
+      console.log(lorem.includes("amet"));
+      console.log(lorem.includes("Lian"));
+      console.log(lorem);
+      console.log(lorem.trim());
+      console.log(lorem.split(" "));
+    </script>
+  </body>
+</html>
+

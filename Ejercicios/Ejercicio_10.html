@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 10</h1>
+    <script>
+        /* 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true  */
+        const capicua = (numero = 0) =>{
+            if(!numero) return console.warn("DATOS VACIOS");
+            if(typeof numero !== "number") return console.error(`EL DATO "${numero}" NO ES UN NUMERO`);
+            numero = numero.toString();
+            let reves = numero.split("").reverse().join("");
+            return(numero === reves)
+                ? console.info(`${numero} SI es capicua de ${reves}`)
+                : console.info(`${numero} NO es capicua de ${reves}`);
+        }
+        capicua();
+        capicua("Hola");
+        capicua({});
+        capicua(2077);
+        capicua(111);
+        capicua(2134);
+        capicua(123.21);
+        capicua(12321);
+        capicua(212.212);
+    </script>
+</body>
+</html>

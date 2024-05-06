@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 44</title>
+</head>
+<body>
+    <h1>Propiedades Dinámicas de los Objetos</h1>
+    <script>
+        let aleatorio = Math.round(Math.random () * 100 + 4);
+        const objUsuarios = {
+            propiedad: "Valor",
+            [`id_${aleatorio}`]: "Valor Aleatorio"
+        }
+        console.log(objUsuarios);
+
+        const usuarios = ["Lian","Anli","Lico","Many"];
+        usuarios.forEach((usuario,index) => objUsuarios[`id_${index}`] = usuario);
+
+        console.log(objUsuarios);
+    </script>
+</body>
+</html>

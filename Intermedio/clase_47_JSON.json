@@ -1,0 +1,11 @@
+{
+    "cadena": "Lian",
+    "numero": 23,
+    "boolean": true,
+    "array": ["correr","programar","jugar"],
+    "objeto": {
+        "email": "liandev2000@gmail.com",
+        "celular": 123456789
+    },
+    "nulo": null
+}

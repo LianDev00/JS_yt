@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 8</title>
+  </head>
+  <body>
+    <h1>Funciones</h1>
+    <script>
+      // Funcion Declarada
+      function funcion1() {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+      }
+      // Invocacion de Funciones
+      //funcion1();
+
+      function funcion2() {
+        console.log("Cuatro");
+        // return 19;
+        console.log("Cinco");
+        console.log("Seis");
+        return "La funcion2 ha retornado una cadena de texto.";
+      }
+      //let valorDeFuncion = funcion2();
+      //console.log(valorDeFuncion);
+
+      console.log("---------------------------------------------------")
+
+      function saludar(nombre, edad) {
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`);
+      }
+      //saludar();
+      //saludar("Lian", 23);
+
+      function saludar2(nombre = "Anli", edad = 32) {
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`);
+      }
+      //saludar2();
+      
+      console.log("---------------------------------------------------")
+
+      // Funciones Declaradas vs Funciones Expresadas
+      funcionDeclarada();
+//              ^
+//              ^
+      function funcionDeclarada() {
+        console.log("Esto es una funcion declarada, puede invocarse en cualquier parte de nuestro codigo incluso antes de que la funcion sea declarada")
+      }
+      funcionDeclarada()
+      
+      // Funcion Anonima
+      // funcionExpresada(); --> No se puede invocar antes de inciarse.
+
+      const funcionExpresada = function(){
+        console.log("Esto es una funcion expresada, es decir, se le ha asignado como valor a una variable, si invocarmos esta funcion antes de su definicion JS nos dirá...")
+      };
+
+      funcionExpresada();
+    </script>
+  </body>
+</html>

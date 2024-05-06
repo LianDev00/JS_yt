@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API TV Show's</title>
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      background-color: #262a33;
+      color: #ccc;
+    }
+
+    .grid-fluid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-top: 1rem;
+    }
+
+    article{
+      border: 1px solid #fff;
+      padding: 1rem;
+    }
+
+    .loader {
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>API TV Show's</h1>
+  <input type="search" id="search" placeholder="Buscar..." autocomplete="off">
+  <section id="shows" class="grid-fluid">
+    <template id="show-template">
+      <article class="show">
+        <h3></h3>
+        <div></div>
+        <img>
+        <a></a>
+      </article>
+    </template>
+  </section>
+
+  <script>
+    const d = document,
+      $shows = d.getElementById("shows"),
+      $template = d.getElementById("show-template").content,
+      $fragement = d.createDocumentFragment();
+
+    d.addEventListener("keypress", async e => {
+      if (e.target.matches("#search")) {
+        // console.log(e.key, e.keyCode)
+        if (e.key === "Enter") {
+          try {
+            $shows.innerHTML = `<img class="loader" src="../assets/loader.svg" alt="Loading...">`
+
+            let query = e.target.value.toLowerCase(),
+              api = `https://api.tvmaze.com/search/shows?q=${query}`,
+              res = await fetch(api),
+              json = await res.json();
+
+            console.log(api, res, json)
+
+            if (!res.ok) throw { status: res.status, statusText: res.statusText }
+
+            if (json.length === 0) {
+              $shows.innerHTML = `<h2>No existen resultados para <mark>${query}</mark></h2>`;
+            } else {
+              json.forEach(el => {
+                $template.querySelector("h3").textContent = el.show.name;
+                $template.querySelector("div").innerHTML = el.show.summary ? el.show.summary : "Sin Descripcion";
+                $template.querySelector("img").src = el.show.image ? el.show.image.medium : "https://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
+                $template.querySelector("img").alt = el.show.name;
+                $template.querySelector("img").style.maxWidth = "100%";
+                $template.querySelector("a").href = el.show.url ? el.show.url : "#";
+                $template.querySelector("a").target = el.show.url ? "_blank" : "_self";
+                $template.querySelector("a").textContent = el.show.url ? "ver más..." : "";
+
+                let $clone = d.importNode($template, true)
+                $fragement.appendChild($clone)
+              });
+
+              $shows.innerHTML = ""
+              $shows.appendChild($fragement);
+            }
+
+
+          } catch (err) {
+            console.log(err)
+            let message = err.statusText || "Ocurrio un Error"
+            $shows.innerHTML = `<p>Error ${err.status}: ${message}</p>`
+          }
+        }
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

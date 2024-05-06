@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 18</h1>
+    <script>
+        /* 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
+        const consonantesVocales = (palabra = "") => {
+            if(!palabra) return console.warn("CADENA VACIA");
+            if(typeof palabra !== "string") return console.error(`EL VALOR DE "${palabra}" NO ES UNA CADENA DE TEXTO`);
+
+            let vocales = 0,
+                consonantes = 0;
+
+            palabra = palabra.toLocaleLowerCase();
+
+            for (let letra of palabra) {
+                if(/[aeiouáéíóú]/.test(letra)){vocales ++;}
+                if(/[bcdfghjklmnpqrstvwxyz]/.test(letra)){consonantes ++;}
+            }
+            
+            return console.info({
+                palabra,
+                vocales,
+                consonantes
+            });
+        }
+        consonantesVocales();
+        consonantesVocales(12);
+        consonantesVocales("Hola mundo");
+        consonantesVocales("Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident similique laudantium fuga corporis molestiae ab, omnis neque voluptate numquam recusandae blanditiis reprehenderit, aspernatur reiciendis nisi explicabo at nostrum libero placeat.");
+    </script>
+</body>
+</html>

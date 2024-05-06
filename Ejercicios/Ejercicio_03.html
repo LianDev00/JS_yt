@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 3</h1>
+    <script>
+        /* 3) Programa una funcion que dada una String te devuelva un Array de textos separados por cieto caracter.
+        Ejem: miFuncion("Hola mundo soy Lian") devolvera ["Hola", "mundo", "soy", "Lian"]*/
+        const separacion = (cadena = "", separador = undefined) =>
+            (!cadena)
+                ? console.warn("DATOS VACIOS")
+                : (separador === undefined)
+                    ? console.warn("SEGUNDO VALOR VACIO")
+                    : console.info(cadena.split(separador));
+        separacion();
+        separacion("Hola mundo",);
+        separacion(""," ");
+        separacion("Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tempora corrupti temporibus minus molestiae eligendi alias dicta, nam error commodi necessitatibus nobis consequatur itaque quos ipsum voluptatibus nulla vitae quis."," ");
+        separacion("Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic",",");
+        separacion("Hola mundo","a");
+    </script>
+</body>
+</html>

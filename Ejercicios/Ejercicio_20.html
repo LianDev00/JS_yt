@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 20</h1>
+    <script>
+        /* 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero */
+        const validarEmail = (email = "") =>{
+            if(!email) return console.warn("CADENA VACIA");
+            if(typeof email !== "string") return console.error(`EL VALOR DE "${email}" NO ES UNA CADENA DE TEXTO`);
+
+            let expReg = /[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9]+)*(\.[a-z]{2,15})/i.test(email);
+
+            return(expReg)
+                ? console.info(`"${email}", SI es un Email valido.`)
+                : console.info(`"${email}", NO es un Email valido.`);
+        }
+        validarEmail();
+        validarEmail(23);
+        validarEmail("sad@.pe");
+        validarEmail("liandev2000@gmail.com");
+        console.clear();
+
+        /* Fusion del Ejercicio 19 y 20*/
+        const validarPatron = (cadena = "", patron = undefined) =>{
+            if(!cadena) return console.warn("CADENA VACIA");
+            if(typeof cadena !== "string") return console.error(`EL VALOR DE "${cadena}" NO ES UNA CADENA DE TEXTO`);
+            if(patron === undefined) return console.warn("PATRON VACIO");
+            if(!(patron instanceof RegExp)) return console.error(`EL VALOR DE "${patron}" NO ES UNA EXPRESION REGULAR`);
+
+            let expReg = patron.test(cadena);
+
+            return(expReg)
+                ? console.info(`"${cadena}", SI cumlpe con el patron ingresado.`)
+                : console.info(`"${cadena}", NO cumlpe con el patron ingresado.`);
+        }
+        validarPatron();
+        validarPatron(2);
+        validarPatron("Hola mundo",);
+        validarPatron("Hola mundo",/^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g);
+        validarPatron("Hola mundo",/^[a-zÑñÁáÉéÍíÓóÚú\s]+$/g);
+        validarPatron("liandev2000@gmail.com",/[a-z0-9]+(\[_a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9]+)*(\.[a-z]{2,15})/i);
+        validarPatron("liandev2000@gmail.com",/[0-9]+(\[_0-9]+)*@[0-9]+(\.[a-z0-9]+)*(\.[a-z]{2,15})/i);
+    </script>
+</body>
+</html>

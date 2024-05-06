@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01</title>
+  </head>
+  <body>
+    <h1>Ejercicio de Lógica de Programación 1</h1>
+    <script>
+      /* 1) Programa una funcion que cuente el numero de caracteres de una cadena de texto
+        Ejem: miFuncion("Hola mundo") devolvera 10 caracteres*/
+      console.log("Ejecicio 1");
+
+      // ============================forma 1============================
+      function contar(cadena) {
+        let contador = 0;
+        for (let i = 0; i < cadena.length; i++) {
+          contador++;
+        }
+        return contador;
+      }
+      let texto = "Hola mundo";
+      let numCarac = contar(texto);
+      console.log(texto, "tiene:", numCarac, "caracteres.");
+      console.log("");
+
+      // ============================forma 2============================
+      function contar2(cadena2) {
+        return cadena2.length;
+      }
+
+      let texto2 = "Hola mundo";
+      let numCarac2 = contar2(texto);
+      console.log(texto, "tiene:", numCarac2, "caracteres.");
+      console.log("");
+
+      // ======================forma 3(jonmircha)=======================
+      // Funcion Declarada
+      function contar3(cadena3 = "") {
+        if (!cadena3) {
+          console.warn("DATOS VACIOS");
+        } else {
+          console.info(`"${cadena3}" tiene: ${cadena3.length} caracteres`);
+        }
+      }
+      contar3();
+      contar3("Hola mundo");
+      
+      // Funcion Expresada
+      const contar4 = (cadena4 = "") =>
+        !cadena4
+          ? console.warn("DATOS VACIOS")
+          : console.info(`"${cadena4}" tiene: ${cadena4.length} caracteres`);
+      contar4();
+      contar4("Hola mundo");
+      console.log("");
+
+      // ============================forma 4============================
+      let hola = "Hola mundo";
+      for (const caracter of hola) {
+        console.log(`"${hola}" tiene: ${hola.length} caracteres.`);
+      }
+    </script>
+  </body>
+</html>

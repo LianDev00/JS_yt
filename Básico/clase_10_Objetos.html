@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 10</title>
+  </head>
+  <body>
+    <h1>Objetos</h1>
+    <script>
+      const a = {};
+      console.log(a);
+
+      const b = new Object();
+      console.log(b);
+
+      const lian = {
+        nombre: "Lian",
+        apellido: "Corper",
+        edad: 23,
+        pasatiempos: ["Ejercitarse", "Jugar videojuegos"],
+        soltero: true,
+        contacto: {
+          email: "liandev2000@gmail.com",
+          celular: 123456789,
+        },
+        // dentro de un objeto a las variables se le van a llamar "atributos / propiedades" y a las funciones se les llama "metodos"
+        saludar: function () {
+          console.log("Hola");
+        },
+        decirMiNombre: function () {
+          console.log(
+            `Hola, mi nombre es ${this.nombre} ${this.apellido} tengo ${this.edad} y me puedes contactar por mi email: ${this.contacto.email}`
+          );
+        },
+      };
+
+      console.log(lian["nombre"]);
+      console.log(lian["apellido"]);
+      console.log(lian["edad"]);
+      console.log(lian["pasatiempos"]);
+      console.log(lian["soltero"]);
+      console.log(lian["contacto"]["celular"]);
+
+      console.log(lian.nombre);
+      console.log(lian.apellido);
+      console.log(lian.edad);
+      console.log(lian.pasatiempos[1]);
+      console.log(lian.contacto.email);
+
+      lian.saludar();
+      lian.decirMiNombre();
+
+      console.log(Object.keys(lian));
+      console.log(Object.values(lian));
+      console.log(lian.hasOwnProperty("nombre"));
+      console.log(lian.hasOwnProperty("carrera"));
+    </script>
+  </body>
+</html>

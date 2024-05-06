@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 7</h1>
+    <script>
+        /* 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true */
+        // JavaScript es sensible a las mayusculas y minusculas
+        const palindromo = (cadena = "") =>{
+            if(!cadena) return console.warn("DATOS VACIOS");
+            // convertimos "cadena" a minusculas
+            cadena = cadena.toLowerCase();
+            // A "reves" le separamos cada letra y al mismo tiempo una cadena con "split", luego con "reverse" leemos del final al inicio para finalmente juntarlo todo con "join".
+            let reves = cadena.split("").reverse().join("");
+            return (cadena === reves)
+                ? console.info(`"${cadena}" SI es un palindromo de ${reves}`)
+                : console.info(`"${cadena}" NO es un palindromo ${reves}`);
+        }
+        palindromo();
+        palindromo("Salas");
+        palindromo("Hola")
+    </script>
+</body>
+</html>

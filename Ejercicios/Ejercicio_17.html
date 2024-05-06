@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 17</h1>
+    <script>
+        /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(2000,1,29)) devolverá 23 años (en 2023) */
+        const calcularYears = (fecha = undefined,) => {
+            if(fecha === undefined) return console.error(`NO INGRESASTE LA FECHA.`);
+            if(!(fecha instanceof Date)) return console.error(`"${fecha}" NO ES CONSIDERADA UNA FECHA.`);
+
+            let hoyMenosFecha = new Date().getTime() - fecha.getTime(),
+                yearsMS = (1000 * 60 * 60 * 24 * 365),
+                yearsHuman = Math.floor(hoyMenosFecha / yearsMS);
+
+            return(Math.sign(yearsHuman) === -1)
+                ? console.info(`Faltan ${Math.abs(yearsHuman)} años para el ${fecha.getFullYear()}.`)
+                : (Math.sign(yearsHuman) === 1)
+                    ? console.info(`Han pasado ${yearsHuman} años, desde ${fecha.getFullYear()}.`)
+                    : console.info(`Estamos en el año actual ${fecha.getFullYear()}.`);
+        }
+        calcularYears();
+        calcularYears("hola");
+        calcularYears(new Date);
+        calcularYears(new Date(2000,1,29));
+        calcularYears(new Date(1592,6,15));
+        calcularYears(new Date(2050,1,29));
+        </script>
+</body>
+</html>

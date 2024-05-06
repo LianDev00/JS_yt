@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 23</title>
+  </head>
+  <body>
+    <h1>Métodos estáticos, getters y setters</h1>
+    <script>
+      class Animal {
+        constructor(nombre, genero) {
+          // el constructor es un metodo especial que se ejecuta al instanciar la clase
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        // Metodos:
+        sonar() {
+          console.log("*Sonidos de animal*");
+        }
+        saludar() {
+          console.log(
+            `Hola me llamo ${this.nombre},soy ${this.genero}, mi tamaño es ${this.tamanio} y mi raza es  ${this.raza}.`
+          );
+        }
+      }
+
+      class Perro extends Animal {
+        constructor(nombre, genero, tamanio, raza) {
+          // "super" manda a llamar al constructor del la clase padre
+          super(nombre, genero);
+          this.tamanio = tamanio;
+          this.raza = raza;
+          this.edad = null;
+        }
+        sonar() {
+          console.log("*sonidos de perro*");
+        }
+        ladrar() {
+          console.log("guau guau!");
+        }
+        static queEres() {
+          console.log(
+            "Los perros somo animales mamiferos que pertenecemos a la familia de los canidos, Somos considerados los mejores amigos del hombre"
+          );
+        }
+        // los 'setters' y 'getters' son metodos que nos permiten establecer y obtener los valores de atributos de nuestra clase.
+        get getEdad(){
+          return this.edad;
+        }
+        set setEdad(edad){
+          this.edad = edad;
+        }
+      }
+
+      Perro.queEres();
+
+      const mimi = new Animal("Mimi", "Hembra"),
+        scooby = new Perro("Scooby", "Macho", "Gigante", "Gran Danes");
+
+      console.log("");
+      console.log(mimi);
+      console.log(scooby);
+      console.log("");
+
+      mimi.sonar();
+      mimi.saludar();
+      // mimi.ladrar();
+      console.log("");
+
+      scooby.sonar();
+      scooby.saludar();
+      scooby.ladrar();
+      console.log("");
+
+      // scooby.getEdad();
+      console.log(scooby.getEdad);
+      // scooby.setEdad(4);
+      scooby.setEdad = 4;
+      console.log(scooby.getEdad)
+    </script>
+  </body>
+</html>

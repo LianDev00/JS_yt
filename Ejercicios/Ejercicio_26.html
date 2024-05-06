@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 26</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 26</h1>
+    <script>
+        /* 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5 */
+        const promedio = (array = undefined) =>{
+            if(array === undefined) return console.error("ARREGLO NO DEFINIDO");
+            if(!(array instanceof Array)) return console.error(`"${array}" NO ES UN ARREGLO`);
+            if(array.length === 0) return console.error("ARREGLO VACIO");
+            if(array.length === 1) return console.error("EL ARREGLO TIENE QUE TENER AL MENOS 2 ELEMENTOS");
+            
+            for (let numero of array) {
+                if(typeof numero !== "number") return console.error(`EL VALOR DE "${numero}" NO ES UN NUMERO.`);
+            }
+            
+            return console.info(
+                /* Utiliza el método 'reduce' en la matriz 'array' para calcular el promedio de sus valores.
+                La función de devolución de llamada proporcionada toma cuatro argumentos:
+                'total', 'num', 'index' y 'array'.
+                'total' es el acumulador que se actualiza en cada iteración.
+                num' es el valor actual del elemento que está siendo evaluado en la matriz.
+                'index' es el índice del elemento actual que está siendo evaluado en la matriz.
+                'array' es la matriz original que se está procesando.
+                
+                En cada iteración, se agrega el valor actual 'num' al 'total' acumulado.
+                Si el índice actual 'index' es igual al índice del último elemento en la matriz ('array.length-1'), la función devuelve una cadena formateada con el promedio de la matriz.
+
+                Si no es el último índice, la función devuelve el 'total' acumulado sin cambios, 
+                lo que se utiliza como el valor de acumulador para la siguiente iteración.
+                Al final, el método 'reduce' devuelve la cadena formateada que representa el promedio de los valores de la matriz.*/
+                array.reduce((total,num,index,array)=>{
+                    total += num
+                    if(index === array.length-1){
+                        return `El promeido de ${array.join(" + ")} es igual a ${total/array.length}`;
+                    } else{
+                        return total
+                    }
+                })
+            );
+        }
+        promedio();
+        promedio([]);
+        promedio("hola");
+        promedio([1]);
+        promedio(["e",true]);
+        promedio([1,2,3,4,5,6]);
+    </script>
+</body>
+</html>

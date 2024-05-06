@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 37</title>
+</head>
+<body>
+    <h1>Nuevos tipos de datos en JavaScript</h1>
+    <script>
+        let id = "Hola";
+        let id2 = "Hola";
+        console.log(id === id2,);
+
+        let et = Symbol("et");
+        let et2 = Symbol("et2");
+        console.log(et === et2);
+        console.log(et, et2);
+        console.log(typeof et, typeof et2);
+
+        console.log("");
+
+        const NOMBRE = Symbol();
+        
+        const PERSONA = {
+            [NOMBRE]: "Lian",
+            edad: 23,
+        };
+        console.log(PERSONA);
+        
+        PERSONA.NOMBRE = "Lian Corper"
+        console.log(PERSONA);
+        console.log(PERSONA.NOMBRE);
+        console.log(PERSONA[NOMBRE]);
+
+        console.log("");
+        
+        const SALUDAR = Symbol();
+        PERSONA[SALUDAR] = function(){
+            console.log("Hola");
+        }
+        console.log(PERSONA);
+        PERSONA[SALUDAR]();
+
+        console.log("");
+
+        for (const propiedad in PERSONA) {
+            console.log(propiedad);
+            console.log(PERSONA[propiedad]);
+        }
+
+        console.log("");
+
+        console.log(Object.getOwnPropertySymbols(PERSONA));
+
+    </script>
+</body>
+</html>

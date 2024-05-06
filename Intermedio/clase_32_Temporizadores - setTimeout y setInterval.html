@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 32</title>
+  </head>
+  <body>
+    <h1>Temporizadores (setTimeout & setInterval)</h1>
+    <script>
+      console.log("Inicio");
+
+      setTimeout(() => {
+        console.log(`Ejecutando un "setTimeout", esto se ejecuta una sola vez despues de 3 segundo.`);
+      }, 1000);
+
+      setInterval(() => {
+        console.log(`Ejecutando un "setInterval", esto se ejecuta idefinidamente cada cierto intervalo de tiempo.`);
+      }, 1000); 
+      
+      setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+      
+      setTimeout(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+     
+      
+      let temporizador = setTimeout(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+      
+      clearTimeout(temporizador);
+      console.log(`Despues del "clearTimeout"`);
+
+      
+
+      let temporizador1 = setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+
+      clearInterval(temporizador1);
+      console.log(`Despues del "clearInterval"`);
+      </script>
+  </body>
+</html>

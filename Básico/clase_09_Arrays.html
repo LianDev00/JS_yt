@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 9</title>
+  </head>
+  <body>
+    <h1>Arrays</h1>
+    <script>
+      const a = [];
+      const b = [1, true, "Hola", ["a", "b", "c"]];
+      const c = ["1", "2", "3", ["4", "5", ["6", "7"]]];
+      const d = Array.of("x", "y", "z", 8, 9);
+      const e = Array(10).fill(false);
+      const f = new Array(1, 2, 3, true, false);
+      const g = ["Rojo", "Verde", "Azul", "Amarrillo"];
+
+      console.log(a);
+      console.log(typeof a);
+
+      console.log(b);
+      console.log(b.length);
+      console.log(b[2]);
+      console.log(b[3]);
+      console.log(b[3][2]);
+
+      console.log(c[3][2][1]);
+
+      console.log(d);
+
+      console.log(e);
+
+      console.log(f);
+
+      console.log(g);
+      g.push("Negro");
+      console.log(g);
+      g.pop();
+      console.log(g);
+      g.pop();
+      console.log(g);
+      g.forEach(function (el,index) {
+        console.log(`<li id="${index}">${el}</li>`)
+      });
+    </script>
+  </body>
+</html>

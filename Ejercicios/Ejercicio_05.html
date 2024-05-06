@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 5</h1>
+    <script>
+        /* 5)Programa una funcion que invierta las palabras de una cadena de texto
+        Ejem: miFuncion("Hola mundo") devolveria "odnum aloH"*/
+        const invertir = (cadena = "") => 
+            (!cadena)
+            ? console.warn("DATOS VACIOS")
+            : console.info(cadena.split("").reverse().join(""));
+        invertir();
+        invertir("");
+        invertir("Hola mundo");
+        invertir("Lian");
+        invertir("Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi necessitatibus quia commodi nesciunt. Illum, inventore ullam? Eveniet ad veniam temporibus voluptates alias? Ipsa, ducimus adipisci. Totam animi atque itaque facilis?");
+    </script>
+</body>
+</html>

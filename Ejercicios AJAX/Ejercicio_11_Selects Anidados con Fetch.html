@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selects Anidados con Fetch</title>
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      background-color: #262a33;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Selects Anidados con Fetch</h1>
+  <h2>Perú</h2>
+  <label for="select-primary">Departamentos</label>
+  <select name="primary" id="select-primary">
+    <option value="">-- Elige un Departamento --</option>
+  </select>
+  <p></p>
+  <label for="select-secondary">Distritos</label>
+  <select name="secondary" id="select-secondary">
+    <option value="">-- Elige un Distrito --</option>
+  </select>
+  <p></p>
+
+  <script>
+    const d = document,
+      $selectPrimary = d.getElementById("select-primary"),
+      $selectSecondary = d.getElementById("select-secondary")
+
+    function loadDepartment() {
+      fetch("./Departamentos.json")
+        .then(res => res.ok ? res.json() : Promise.reject(res))
+        .then(json => {
+          console.log(json)
+          let $options = `<option value="">-- Elige un Departamento --</option>`
+          json.response.departamento.forEach(el => $options += `<option value="${el}">${el}</option>`);
+          $selectPrimary.innerHTML = $options
+        })
+        .catch(err => {
+          console.log(err)
+          let message = err.statusText || "Ocurrio un Error"
+          $selectPrimary.nextElementSibling.innerHTML = `Error ${err.status}: ${message}`
+        })
+    }
+
+    function loadDistricts(department) {
+      fetch(`./Distritos_${department}.json`)
+        .then(res => res.ok ? res.json() : Promise.reject(res))
+        .then(json => {
+          console.log(json)
+          let $options = `<option value="">-- Elige un Distrito --</option>`
+          json.response.distrito.forEach(el => $options += `<option value="${el}">${el}</option>`);
+          $selectSecondary.innerHTML = $options
+        })
+        .catch(err => {
+          console.log(err)
+          let message = err.statusText || "Ocurrio un Error"
+          $selectSecondary.nextElementSibling.innerHTML = `Error ${err.status}: ${message}`
+        })
+    }
+
+    d.addEventListener("DOMContentLoaded", loadDepartment())
+
+    $selectPrimary.addEventListener("change", e => loadDistricts(e.target.value))
+
+  </script>
+
+</body>
+
+</html>

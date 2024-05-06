@@ -1,0 +1,19 @@
+{
+  "error": false,
+  "code_error": 0,
+  "error_message": null,
+  "response": {
+      "distrito": [
+        "Ccorca",
+        "Cusco",
+        "Poroy",
+        "San Jerónimo",
+        "San Sebastián",
+        "Santiago",
+        "Saylla",
+        "Wanchaq",
+        "Andahuaylillas",
+        "Anta"
+      ]
+  }
+}

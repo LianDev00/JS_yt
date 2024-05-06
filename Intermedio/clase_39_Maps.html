@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 39</title>
+</head>
+<body>
+    <h1>Maps</h1>
+    <script>
+        console.group('');
+        const mapa = new Map();
+        mapa.set("nombre","Lian");
+        mapa.set("apellido","Corper");
+        mapa.set("edad",23);
+        console.log(mapa);
+        console.log(mapa.size);
+        console.log(mapa.has("correo"));
+        console.log(mapa.has("edad"));
+        console.log(mapa.get("nombre"));
+        mapa.set("nombre","Lian Corper");
+        console.log(mapa.get("nombre"));
+        mapa.delete("apellido")
+        mapa.set(19,"diecinueve")
+        mapa.set(false,"Falso")
+        console.log(mapa);
+
+        for (const [key,value] of mapa) {
+            console.log(`Llave: ${key}, Valor: ${value}`);
+        }
+        console.groupEnd();
+        
+
+        console.group('');
+        const mapa2 = new Map([
+            ['nombre','Rocky'],
+            ['edad',14],
+            ['animal','Perro'],
+            [null,'nulo']
+        ]);
+        console.log(mapa2);
+        const llavesMapa2 = [...mapa2.keys()]
+        const valoresMapa2 = [...mapa2.values()];
+        console.log(llavesMapa2);
+        console.log(valoresMapa2);
+        console.groupEnd();
+    </script>
+</body>
+</html>

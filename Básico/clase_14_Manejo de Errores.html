@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 14</title>
+  </head>
+  <body>
+    <h1>Manejo de Errores</h1>
+    <script>
+      /*
+        try{
+            console.log("try: CODIGO A EVALUAR");
+            //noExiste;
+            console.log("Segundo mensaje en el 'try'");
+        }catch(error){
+            console.log("catch: ALERTA DE ERROR");
+            console.log(error);
+        }finally{
+            console.log("finally: SIEMPRE AL FINAL DEL 'try-catch'");
+        }
+        */
+
+      try {
+        let numero = "y";
+        if (isNaN(numero)) {
+          throw new Error("EL TIPO DE DATO INTRODUCIDO ES INCORRECTO");
+        }
+        console.log(numero * numero);
+      } catch (error) {
+        console.log(`Se produjo el siguiente ${error}`);
+      } finally {
+        console.log("--> CONNECT...");
+      }
+    </script>
+  </body>
+</html>

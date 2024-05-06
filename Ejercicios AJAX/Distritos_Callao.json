@@ -1,0 +1,15 @@
+{
+  "error": false,
+  "code_error": 0,
+  "error_message": null,
+  "response": {
+      "distrito": [
+        "Bellavista",
+        "Callao",
+        "Carmen de La Legua-Reynoso",
+        "La Perla",
+        "La Punta",
+        "Ventanilla"
+      ]
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 21</title>
+</head>
+<body>
+    <h1>Herencia Prototípica</h1>
+    <script>
+        function Animal(nombre,genero){
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+        Animal.prototype.sonar = function(){
+            console.log("*Sonidos de animal v2*");
+        }
+        Animal.prototype.saludar = function(){
+            console.log(`Hola me llamo ${this.nombre},soy ${this.genero}, mi tamaño es ${this.tamanio} y mi raza es  ${this.raza}.`);
+        }
+
+        // Herencia Prototipica
+        function perro(nombre, genero, tamanio, raza) {
+            // "super" manda a llamar al constructor del la clase padre
+            this.super = Animal;
+            this.super(nombre,genero,raza);
+            this.tamanio = tamanio;
+            this.raza = raza;
+        }
+        // 'perro' esta herendando de 'Animal'
+        perro.prototype = new Animal();
+        perro.prototype.constructor = perro;
+        // sobreescritura de metodos del prototipo padre en el hijo
+        perro.prototype.sonar = function(){
+            console.log("*sonidos de perro*");
+        }
+        perro.prototype.ladrar = function(){
+            console.log("guau guau!");
+        }
+        
+        const snoopy = new perro("Snoopy","Macho","mediano","beagle")
+        console.log(snoopy);
+        snoopy.sonar();
+        snoopy.ladrar();
+        snoopy.saludar();
+    </script>
+</body>
+</html>

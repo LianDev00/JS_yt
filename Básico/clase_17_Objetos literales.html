@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 17</title>
+</head>
+<body>
+    <h1>Objetos literales</h1>
+    <script>
+        let nombre = "Lian", 
+            edad = 23;
+        // forma 1
+        const humano ={
+            nombre: nombre,
+            edad: edad,
+            hablar: function(){
+                console.log(`Hola mundo`);
+            }
+        }
+        console.log(humano);
+        humano.hablar();
+
+        // forma 2
+        const human = {
+            nombre,
+            edad,
+            carrera: "Ing. software",
+            hablar(){
+                console.log(`Hola mundo v2`);
+            }
+        }
+        console.log(human);
+        human.hablar();
+
+    </script>
+</body>
+</html>

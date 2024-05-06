@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 8</h1>
+    <script>
+        /* 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5 */
+        const limpieza = (cadena = "", patron = "") =>
+            (!cadena) 
+                ? console.warn("DATOS VACIOS")
+                : (!patron)
+                    ? console.warn("NO HAY UN PATRON DE BUSQUEDA")
+                    : console.info(cadena.replace(new RegExp(patron,"ig"),""));
+        limpieza();
+        limpieza("","xyz");
+        limpieza("xyz1,xyz2,xyz3,xyz4","");
+        limpieza("xyz1,xyz2,xyz3,xyz4,xyz5","xyz");
+        limpieza("xyz1,xyz2,xyz3,xyz4,xyz5","[xz]");
+        limpieza("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, quibusdam dolore suscipit vero sed ipsam et blanditiis impedit explicabo inventore doloribus ex cum dolorum cumque qui. Illo saepe aperiam debitis.","[a-z]");
+    </script>
+</body>
+</html>

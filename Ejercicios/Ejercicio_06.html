@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 06</title>
+  </head>
+  <body>
+    <h1>Ejercicio de Lógica de Programación 6</h1>
+    <script>
+      /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo.
+         Ejem: miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
+      const palabraRepetida = (cadena = "", texto = "") => {
+        if (!cadena) return console.warn("DATOS VACIOS");
+        if (!texto) return console.warn("SEGUNDA PALABRA VACIA");
+        let i = 0, 
+        contador = 0;
+
+        while (i !== -1) {
+          i = cadena.indexOf(texto,i);
+          if (i !== -1) {
+            i += texto.length;
+            contador++;
+          }
+        }
+        return console.info(`${texto} se repite ${contador} veces.`);
+      };
+      palabraRepetida();
+      palabraRepetida("Hola", "");
+      palabraRepetida("Hola mundo soy el mejor programador del mundo y nadie de este mundo me superara.","mundo");
+    </script>
+  </body>
+</html>

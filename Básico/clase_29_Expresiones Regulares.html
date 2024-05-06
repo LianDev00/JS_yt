@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 29</title>
+</head>
+<body>
+    <h1>Expresiones Regulares</h1>
+    <script>
+        // Expresiones Regulares: son unas secuencias de caracteres que forman un patron de busqueda, principalmente utilizada para la busqueda de patrones de cadenas de caracteres.
+        let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quasi, tempora natus aperiam laborum praesentium id. Tenetur, quisquam praesentium laboriosam quia lorem repellendus obcaecati molestiae veritatis animi laborum cupiditate voluptatum 1 sit!";
+
+        // let expReg = new RegExp("lorem","ig");
+        // console.log(expReg.test(cadena));
+        // console.log(expReg.exec(cadena));
+        
+        let expReg2 = /lorem/ig;
+        console.log(expReg2.test(cadena));
+        console.log(expReg2.exec(cadena));
+        console.log("======================================");
+        let expReg3 = /[0-9]/ig;
+        console.log(expReg3.test(cadena));
+        console.log(expReg3.exec(cadena));
+        console.log("======================================");
+        let expReg4 = /lorem{1,2}/ig;
+        console.log(expReg4.test(cadena));
+        console.log(expReg4.exec(cadena));
+        console.log("======================================");
+        let expReg5 = /lorem{3}/ig;
+        console.log(expReg5.test(cadena));
+        console.log(expReg5.exec(cadena));
+    </script>
+</body>
+</html>

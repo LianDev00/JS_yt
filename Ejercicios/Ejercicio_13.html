@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 13</h1>
+    <script>
+         /* 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar */
+         const parImpar = (numero = undefined) => {
+            if(numero === undefined) return console.error(`NO INGRESASTE UN NUMERO`);
+            if(typeof numero !== "number") return console.error(`EL VALOR "${numero}" NO ES UN NUMERO`);
+            if(numero === 0) return console.error(`EL NUMERO NO PUEDE SER "0"`);
+            if(Math.sign(numero) === -1) return console.error(`EL "${numero}" NO PUEDE SER "NEGATIVO"`);
+
+            return((numero % 2) === 0)
+                ? console.info(`"${numero}" es PAR`)
+                : console.info(`"${numero}" es IMPAR`);
+         }
+         parImpar();
+         parImpar({});
+         parImpar(0);
+         parImpar(-1);
+         parImpar(2);
+         parImpar(3);
+         parImpar(6);
+         parImpar(7);
+    </script>
+</body>
+</html>

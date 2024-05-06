@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 22</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 22</h1>
+    <script>
+        /* 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60] */
+        const arrayMinMax = (array = undefined) =>{
+            if(array === undefined) return console.error("ARREGLO NO DEFINIDO");
+            if(!(array instanceof Array)) return console.error("NO ES UN ARREGLO");
+            if(array.length === 0) return console.error("ARREGLO VACIO");
+
+            for (let numero of array) {
+                if(typeof numero !== "number") return console.error(`EL VALOR DE "${numero}" NO ES UN NUMERO.`);
+            }
+
+            return console.info(`Arreglo original...: ${array}\nArreglo Mayor......: ${Math.max(...array)}\nArreglo Menor......: ${Math.min(...array)}`);
+        }
+        arrayMinMax();
+        arrayMinMax(2);
+        arrayMinMax("hola");
+        arrayMinMax([]);
+        arrayMinMax(["hola",32,5,1]);
+        arrayMinMax([4,4.1]);
+        arrayMinMax([1,2,3,4,5,6,7]);
+        arrayMinMax([34,7,123,87,0,1]);
+    </script>
+</body>
+</html>

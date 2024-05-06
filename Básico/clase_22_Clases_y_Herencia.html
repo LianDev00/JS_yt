@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 22</title>
+  </head>
+  <body>
+    <h1>Clases y Herencia</h1>
+    <script>
+      class Animal {
+        constructor(nombre, genero) {
+          // el constructor es un metodo especial que se ejecuta al instanciar la clase
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        // Metodos:
+        sonar() {
+          console.log("*Sonidos de animal*");
+        }
+        saludar() {
+          console.log(
+            `Hola me llamo ${this.nombre},soy ${this.genero}, mi tamaño es ${this.tamanio} y mi raza es  ${this.raza}.`
+          );
+        }
+      }
+
+      class Perro extends Animal {
+        constructor(nombre, genero, tamanio, raza) {
+          // "super" manda a llamar al constructor del la clase padre
+          super(nombre, genero);
+          this.tamanio = tamanio;
+          this.raza = raza;
+        }
+        sonar() {
+          console.log("*sonidos de perro*");
+        }
+        ladrar() {
+          console.log("guau guau!");
+        }
+      }
+
+      const mimi = new Animal("Mimi", "Hembra"),
+        scooby = new Perro("Scooby", "Macho", "Gigante", "Gran Danes");
+
+      console.log(mimi);
+      console.log(scooby);
+      console.log("");
+
+      mimi.sonar();
+      mimi.saludar();
+      // mimi.ladrar();
+      console.log("");
+
+      scooby.sonar();
+      scooby.saludar();
+      scooby.ladrar();
+    </script>
+  </body>
+</html>

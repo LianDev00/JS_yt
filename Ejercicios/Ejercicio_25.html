@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 25</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 25</h1>
+    <script>
+        /* 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true]  */
+        const quitarDuplicados = (array = undefined) => {
+            if(array === undefined) return console.error("ARREGLO NO DEFINIDO");
+            if(!(array instanceof Array)) return console.error("NO ES UN ARREGLO");
+            if(array.length === 0) return console.error("ARREGLO VACIO");
+            if(array.length === 1) return console.error("EL ARREGLO TIENE QUE TENER AL MENOS 2 ELEMENTOS");
+
+            /*return console.info({
+                array,
+                Filtra una matriz para eliminar elementos duplicados.
+                 Se utiliza el método 'filter' en la matriz 'array' junto con una función de devolución de llamada.
+                 La función de devolución de llamada toma tres argumentos: 'value', 'index', y 'self'.
+                 'value' es el valor actual del elemento que está siendo evaluado en la 'array'.
+                 'index' es el índice del elemento actual que está siendo evaluado en la 'array'.
+                 'self' es la matriz a la que pertenece el elemento actual.
+                 La función de devolución de llamada compara el índice del elemento actual ('index') 
+                 con el índice de la primera aparición del mismo valor en la 'array' ('self.indexOf(value)').
+                 Si estos índices son iguales, significa que es la primera vez que se encuentra ese valor en la 'array'
+                 y se incluye en la 'array' filtrada resultante. Si no son iguales, significa que ya se ha encontrado ese valor antes y se omite.
+                 La función devuelve una nueva 'array' con valores únicos. 
+                sinDuplicados: array.filter((value,index,self) => self.indexOf(value) === index),
+            });*/
+            return console.info({
+                array,
+                // La naturaleza del "set" es crear un conjunto de elementos que no se repitan entre si eso nos ahorra el trabajo del anterior "return".
+                sinDuplicados: [...new Set(array)]
+            });
+        }   
+        quitarDuplicados();
+        quitarDuplicados("Hola");
+        quitarDuplicados([]);
+        quitarDuplicados([1,2,3,2,1,4,5]);
+        quitarDuplicados([1]);
+        quitarDuplicados(["X",4,"X",7,true,false,3,"10",true]);
+    </script>
+</body>
+</html>

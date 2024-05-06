@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 41</title>
+</head>
+<body>
+    <h1>Iterables & Iterators</h1>
+    <script>
+        // const iterable = new Set([1,2,2,3,4,5]);
+        // const iterable = "hola mundo"
+        const iterable = new Map([["nombre","Lian"],["edad",23]]);
+        const iterador = iterable[Symbol.iterator]();
+        
+        console.log(iterable);
+        console.log(iterador);
+        /*
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        */
+       let next = iterador.next();
+
+       while (!next.done) {
+        console.log(next.value);
+        next = iterador.next();
+       }
+
+    </script>
+</body>
+</html>

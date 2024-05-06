@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase JSON</title>
+</head>
+<body>
+    <h1>Clase de JSON</h1>
+    <script>
+        const json = {
+            cadena: "Lian",
+            numero: 23,
+            array: [1,2,3,4],
+            objeto: {
+                email: "liandev2000@gmail.com",
+                celular: 123456789
+            },
+            nulo: null
+        }
+        console.log(json);
+
+        // ----transformar de Javascript a JSON----
+        console.log(JSON);
+        console.log(JSON.parse);
+        console.log(JSON.parse("[1,2,3]"));
+        console.log(JSON.parse(true));
+        console.log(JSON.parse(19));
+        //console.log(JSON.parse("Hola mundo"));
+        console.log(JSON.parse(null));
+        //console.log(JSON.parse(undefined));
+        
+        // ----transformar de JSON a Javascript----
+        console.log(JSON.stringify({}));
+        console.log(JSON.stringify("[1,2,3]"));
+        console.log(JSON.stringify(true));
+        console.log(JSON.stringify(null));
+        console.log(JSON.stringify(undefined));
+        console.log(JSON.stringify({"x":2,"y":3}));
+        console.log(JSON.stringify(
+                {
+                    "cadena": "Lian",
+                    "numero": 23,
+                    "boolean": true,
+                    "array": ["correr","programar","jugar"],
+                    "objeto": {
+                        "email": "liandev2000@gmail.com",
+                        "celular": 123456789
+                    },
+                    "nulo": null
+                }
+            )
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 19</h1>
+    <script>
+        /* 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Lian Corper") devolverá verdadero */
+        const validarNombre = (nombre ="") =>{
+            if(!nombre) return console.warn("CADENA VACIA");
+            if(typeof nombre !== "string") return console.error(`EL VALOR DE "${nombre}" NO ES UNA CADENA DE TEXTO`);
+
+            let expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(nombre)
+
+            return(expReg)
+                ? console.info(`"${nombre}", SI es un nombre valido.`)
+                : console.info(`"${nombre}", NO es un nombre valido.`);
+        }
+        validarNombre();
+        validarNombre(2);
+        validarNombre({});
+        validarNombre("Lian Corper");
+        validarNombre("Lian Corper, 23");
+    </script>
+</body>
+</html>

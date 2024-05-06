@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 40</title>
+</head>
+<body>
+    <h1>WeakSets & WeakMaps</h1>
+    <script>
+        /*
+        const ws = new Set([1,2,3,4,4,true,false,false,"hola","hOla"])
+        console.log(ws);
+        */
+
+        const ws = new WeakSet();
+        let valor1 = {'valor1': 1};
+        let valor2 = {'valor2': 2};
+        let valor3 = {'valor3': 3};
+
+        ws.add(valor1);
+        ws.add(valor2);
+
+        console.group("");
+        console.log(ws);
+
+        console.log(ws.has(valor2));
+        console.log(ws.has(valor3));
+
+        ws.delete(valor2)
+        console.log(ws);
+        
+        ws.add(valor2);
+        ws.add(valor3);
+        console.log(ws);
+        console.groupEnd();
+        /*
+        setInterval(() => console.log(ws), 500);
+        setTimeout(() => {
+            valor1 = null;
+            valor2 = null;
+            valor3 = null;
+        }, 1000);
+        */
+       /*
+        const wm = new WeakMap([
+            ["nombre","lian"],
+            ["edad",23],
+            [null,"nulo"]
+        ])
+        */
+
+        const wm = new WeakMap();
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+
+        wm.set(llave1,1)
+        wm.set(llave2,2)
+
+        console.group("");
+        console.log(wm);
+        console.log(wm.has(llave1));
+        console.log(wm.has(llave3));
+
+        wm.delete(llave2);
+        console.log(wm);
+
+        wm.set(llave2,2);
+        wm.set(llave3,3);
+        console.log(wm);
+        console.groupEnd();
+
+        setInterval(() => console.log(wm), 1000);
+        setTimeout(() =>{
+            llave1 = null;
+            llave2 = null;
+            llave3 = null;
+        }, 5000)
+
+    </script>
+</body>
+</html>

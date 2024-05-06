@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 14</h1>
+    <script>
+         /* 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F */
+         const convertirGrados = (grados = undefined, unidad = undefined) => {
+            if(grados === undefined) return console.error(`DATOS INVALIDOS`);
+            if(typeof grados !== "number") return console.error(`EL VALOR "${grados}" NO ES UN NUMERO`);
+            if(unidad === undefined) return console.error(`UNIDAD INCORRECTA`);
+            if(typeof unidad !== "string") return console.error(`LA UNIDAD "${unidad}" NO ES UNA CADENA DE TEXTO`);
+            if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn("VALOR DE UNIDAD INVALIDO");
+            if(unidad === "C"){
+                return console.info(`${grados}°C = ${Math.round(grados*(9/5)+32)}°F`);
+            } else if(unidad === "F"){
+                return console.info(`${grados}°F = ${Math.round((grados-32)*5/9)}°C`);
+            }else
+                return console.error("EL TIPO DE GRADOS A CONVERTIR NO ES VALIDO");   
+            
+            console.info("Funciono");
+        }
+        convertirGrados();
+        convertirGrados("2");
+        convertirGrados(2,);
+        convertirGrados(2,true);
+        convertirGrados(2,"Hola");
+        convertirGrados(2,"E");
+        convertirGrados(2,"F");
+        convertirGrados(2,"C");
+        convertirGrados(21,"C");
+        convertirGrados(70,"F");
+        convertirGrados(20,"C");
+        convertirGrados(68,"F");
+        convertirGrados(0,"C");
+        convertirGrados(0,"F");
+        convertirGrados(1,true);
+    </script>
+</body>
+</html>

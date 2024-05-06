@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 24</title>
+  </head>
+  <body>
+    <h1>Objeto console</h1>
+    <script>
+      console.log(console);
+      console.error("Esto es un error");
+      console.warn("Esto es un aviso");
+      console.info("Esto es un mensaje informativo");
+      console.log(
+        `"log" es un registro de lo que ha pasado en nuestra aplicacion`
+      );
+
+      let nombre = "Lian",
+        apellido = "Corper",
+        edad = 23;
+
+      console.log(nombre, apellido, edad);
+      console.log(`Hola me llamo ${nombre} ${apellido} y tengo ${edad} años.`);
+      console.log(`Hola me llamo %s %s y tengo %d años.`);
+      console.log(
+        `Hola me llamo %s %s y tengo %d años.`,
+        nombre,
+        apellido,
+        edad
+      );
+      // console.clear(); -> deja en blanco la consola.
+
+      console.log(window);
+      console.log(document);
+      console.dir(window);
+      console.dir(document);
+
+      console.group("Cursos de @liandev en Youtube");
+      console.log("Curso de Javascript");
+      console.log("Curso de Node.JS");
+      console.log("Curso de Python");
+      console.log("Curso de Xamarin");
+      console.log("Curso de C#");
+      console.groupEnd();
+      console.log("Curso de Java");
+
+      console.log("");
+
+      console.groupCollapsed("Cursos de @liandev en Youtube");
+      console.log("Curso de Javascript");
+      console.log("Curso de Node.JS");
+      console.log("Curso de Python");
+      console.log("Curso de Xamarin");
+      console.log("Curso de C#");
+      console.groupEnd();
+
+      console.table(Object.entries(console).sort());
+
+      const numeros = [1, 2, 3, 4, 5],
+        vocales = ["a", "e", "i", "o", "u"];
+      console.table(numeros);
+      console.table(vocales);
+
+      const perro = {
+        nombre: "Scooby",
+        raza: "Gran Danes",
+        color: "Cafe",
+      };
+      console.table(perro);
+
+      console.time("Tiempo que tarda mi codigo");
+      const arreglo = Array(1000000);
+      for (let i = 0; i < arreglo.length; i++) {
+        arreglo[i] = i;
+      }
+      console.timeEnd("Tiempo que tarda mi codigo");
+      // console.log(arreglo);
+
+      for (let i = 0; i < 100; i++) {
+        console.count("codigo for")
+        console.log(i);
+      }
+
+      let x =1, 
+         y = 2,
+         pruebaXY = "Se espera que X siempres sea menor que Y.";
+      console.assert(x < y,(x,y,pruebaXY)); // no se imprime en la consola porque la condicion es correcta.
+      //console.assert(x > y,(x,y,pruebaXY));
+    </script>
+  </body>
+</html>

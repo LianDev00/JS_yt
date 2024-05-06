@@ -1,0 +1,26 @@
+{
+  "error": false,
+  "code_error": 0,
+  "error_message": null,
+  "response": {
+      "distrito": [
+        "Ate",
+        "Barranco",
+        "Chorrillos",
+        "Comas",
+        "El Agustino",
+        "Independencia",
+        "La Molina",
+        "Los Olivos",
+        "Magdalena del Mar",
+        "Miraflores",
+        "Pueblo Libre",
+        "Rímac",
+        "San Isidro",
+        "San Juan de Lurigancho",
+        "San Luis",
+        "San Martín de Porres",
+        "Surquillo"
+      ]
+  }
+}

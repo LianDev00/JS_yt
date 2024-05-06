@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 2</h1>
+    <script>
+         /* 2) Programa una funcion que devuelva el texto recortado segun el numero de caracteres indicados
+        Ejem: miFuncion("Hola mundo", 4) devolvera "Hola "*/
+      // ============================forma 1============================
+      console.log("Ejecicio 2");
+      function recortarTexto(cadena, numCarac) {
+        return cadena.slice(0, numCarac);
+      }
+
+      let texto4 = "Hola mundo";
+      let textoRecortado = recortarTexto(texto4, 4);
+
+      console.log(`La cadena recortada es: ${textoRecortado}`);
+      console.log("");
+
+      // ======================forma 2(jonmircha)=======================
+      const recortar = (cadena1 = "", recor = undefined) =>
+        (!cadena1)
+        ? console.warn("DATOS VACIOS")
+        : (recor === undefined)
+          ? console.warn(`SEGUNDO VALOR VACIO`)
+          : console.info(cadena1.slice(0,recor));
+      recortar();
+      recortar("Hola mundo",);
+      recortar("",5);
+      recortar("Hola mundo",4)
+    </script>
+</body>
+</html>

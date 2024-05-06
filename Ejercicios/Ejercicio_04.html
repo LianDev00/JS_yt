@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04</title>
+</head>
+<body>
+    <h1>Ejercicio de Lógica de Programación 4</h1>
+    <script>
+        /* 4) Programa una funcion que repita un texto "x" veces.
+        Ejem: miFuncion("Hola mundo", 4) devolvera: Hola mundo
+                                                    Hola mundo
+                                                    Hola mundo
+                                                    Hola mundo*/
+        const repeticion = (cadena = "", repet = undefined) => {
+            // si solo es una linea puedes quitar los "{}" del if
+            if(!cadena) return console.warn("DATOS VACIOS");
+            if(repet === undefined) return console.warn("SEGUNDO VALOR VACIO");
+            if(repet === 0) return console.error("SEGUNDO VALOR NO DEBE SER = 0");
+            if(Math.sign(repet) === -1) return console.error("SEGUNDO VALOR NO DEBE SER NEGATIVO")
+
+            for (let i = 1; i <= repet; i++) console.info(`${cadena} ${i}`);
+        }
+        repeticion();
+        repeticion("Lian",);
+        repeticion("",3);
+        repeticion("Lian",0);
+        repeticion("Lian",-1);
+        repeticion("Lian", 5);
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 19</title>
+</head>
+<body>
+    <h1>Arrow Functions</h1>
+    <script>
+        // Funcion Declarada
+        saludar();
+
+        function saludar(){
+            console.log("hola");
+        }
+        saludar();
+
+        console.log("");
+
+        // Funcion Expresada
+        const saludo = function(){
+            console.log("hola v2");
+        }
+        saludo();
+
+        console.log("");
+        
+        // Arrow Function
+        const saludar2 = () => console.log("hola v3");
+        saludar2();
+
+        const saludar3 = (nombre = "Lian") => console.log(`hola v3 ${nombre}`);
+        saludar3();
+        
+        const saludar4 = nombre => console.log(`hola v3 ${nombre}`);
+        saludar4("Lian v2");
+
+        console.log("");
+
+        // forma 1
+        const sumar = function(a, b){
+            return a + b;
+        }
+        console.log(sumar(1,2));
+
+        // forma 2
+        const sumar2 = (a, b) => a + b;
+        console.log(sumar2(3,4));
+        console.log(sumar2("Hola ","Mundo"));
+
+        console.log("");
+
+        const funcionDeVariasLineas = () =>{
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+        funcionDeVariasLineas();
+
+        console.log("");
+
+        const numeros = [1,2,3,4,5];
+        // array.forEach(funtion(elemento, index)){}
+        numeros.forEach(function(n, i){
+            console.log(`${n} esta en la posicion ${i}`);
+        })
+        console.log("");
+        // array.forEach((elemento, index)=> );
+        numeros.forEach((n, i) => console.log(`${n} esta en la posicion ${i}`));
+
+        console.log("");
+
+        /*
+        la función 'perro()'' es una función regular que se llama directamente. 
+        Cuando se llama una función regular de esta manera, 'this' hace referencia al objeto global (en el navegador, esto es el objeto window). 
+        Por lo tanto, al llamar 'console.log(this)' dentro de la función 'perro()', se imprimirá el objeto global.
+        */
+        function perro(){
+            console.log(this);
+        }
+        perro();
+
+        
+        /*
+        se define un objeto 'perro2' que tiene una propiedad ladrar que es una función anónima. Al llamar 'perro2.ladrar()', 'this' hace referencia al objeto 'perro2', ya que se está llamando la función desde el contexto del objeto. Por lo tanto, al llamar 'console.log(this)' dentro de la función 'ladrar()', se imprimirá el objeto 'perro2'.
+        */
+        const perro2 = {
+            nombre: "Rocky",
+            ladrar: function(){
+                console.log(this,"guau");
+                console.log("guau");
+            }
+        }
+        perro2.ladrar();
+        
+        /*
+        se define un objeto 'perro3' que también tiene una propiedad ladrar que es una función anónima, pero en este caso, se utiliza una función de flecha (=>). Las funciones de flecha no tienen su propio 'this', sino que heredan el 'this' del contexto en el que se definen. En este caso, la función de flecha se define dentro del objeto 'perro3', pero se llama desde el contexto global. Por lo tanto, al llamar 'perro3.ladrar()', this hace referencia al objeto global, al igual que en el primer código. Por lo tanto, al llamar 'console.log(this)' dentro de la función 'ladrar()', se imprimirá el objeto global.
+        */
+        const perro3 = {
+            nombre: "Rocky",
+            ladrar: () => {console.log(this,"guau v2"), 
+                           console.log("guau v2");
+                        }
+        }
+        perro3.ladrar();
+
+    </script>
+</body>
+</html>

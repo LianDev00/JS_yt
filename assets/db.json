@@ -1,0 +1,81 @@
+{
+  "leales": [
+    {
+      "id": 1,
+      "nombre": "Robute Guilliman",
+      "legion": "Ultramarines"
+    },
+    {
+      "id": 2,
+      "nombre": "Corvus Corax",
+      "legion": "Guardia del Cuervo"
+    },
+    {
+      "id": 3,
+      "nombre": "Leman Russ",
+      "legion": "Lobos Espaciales"
+    },
+    {
+      "id": 4,
+      "nombre": "Ferrus Manus",
+      "legion": "Manos de Hierro"
+    },
+    {
+      "id": 5,
+      "nombre": "Sanguinius",
+      "legion": "Angeles Sangrientos"
+    },
+    {
+      "nombre": "Vulcan",
+      "legion": "Salamandras",
+      "id": 6
+    },
+    {
+      "nombre": "Lionel Johnson",
+      "legion": "Angeles Oscuros",
+      "id": 7
+    },
+    {
+      "nombre": "Jaghatai Khan",
+      "legion": "Cicatrices Blancas",
+      "id": 8
+    },
+    {
+      "nombre": "Rogal Dorn",
+      "legion": "Puños Imperiales",
+      "id": 9
+    },
+    {
+      "nombre": "Alfarius Omegon",
+      "legion": "Alpha",
+      "id": 10
+    }
+  ],
+  "traidores": [
+    {
+      "id": 1,
+      "nombre": "Horus Lupercal",
+      "legion": "Hijos de Horus"
+    },
+    {
+      "id": 2,
+      "nombre": "Angron",
+      "legion": "Deboradores de Mundos"
+    },
+    {
+      "id": 3,
+      "nombre": "Mortarion",
+      "legion": "Guardia de la Muerte"
+    },
+    {
+      "id": 4,
+      "nombre": "Fulgrim",
+      "legion": "Hijos del Emperador"
+    },
+    {
+      "id": 5,
+      "nombre": "Konrad Curze",
+      "legion": "Amos de la Noche"
+    }
+  ]
+}

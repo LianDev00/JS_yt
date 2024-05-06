@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 58</title>
+    <style>
+        :root{
+            --yellow-color: #F7DF1F;
+            --dark-color: #222;
+        }
+
+        .cards{
+            border: thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card{
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+        }
+
+        .card figcaption{
+            padding: 1rem;
+        }
+
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+
+        .rotate-135{
+            transform: rotate(135deg);
+        }
+
+        .opacity-80{
+            opacity: .8;
+        }
+
+        .sepia{
+            filter: sepia(1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Manejadores de Eventos</h1>
+    <h3>Manejo del DOM</h3>
+    <h3>Eventos JavaScript</h3>
+    <button onclick="holaMundo()">Evento con Atributo HTML</button>
+    <br><br>
+    <button id="evento-semantico">Evento con Manejador Semantico</button>
+    <br><br>
+    <button id="evento-multiple">Evento con Manejador Multiple</button>
+    <script src="/JS/clase_58.js"></script>
+</body>
+</html>

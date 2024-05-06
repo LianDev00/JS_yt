@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 20</title>
+</head>
+<body>
+    <h1>Prototipos</h1>
+    <script>
+        /* POO
+        Clases -> Metodos a seguir
+            Objetos -> Instancia de una clase
+                Atributo -> Caracteristica o propiedad de un objeto
+                Metodos -> Acciones que un objeto puede realizar
+        */
+        
+        const animal = {
+            nombre: "Snoopy",
+            sonar(){
+            console.log("*Sonidos de animal*");
+            }
+        }
+        console.log(animal);
+
+        const animal2 = {
+            nombre: "Lola Bunny",
+            sonar(){
+                console.log("*Sonidos de animal v2*");
+            }
+        }
+        console.log(animal2);
+        
+        console.log("");
+
+        // Funcion constructora
+        // forma 1 -> Metodos dentro de la funcion constructora
+        
+        function Animal(nombre,genero){
+            // Atributos:
+            this.nombre = nombre;
+            this.genero = genero;
+            // Metodos:
+            this.sonar = function(){
+                console.log("*Sonidos de animal*");
+            }
+            this.saludar = function(){
+                console.log(`Hola me llamo ${this.nombre} y soy ${this.genero}.`);
+            }
+        }
+        const snoopy = new Animal("Snoopy","Macho"), 
+              lolaBunny = new Animal("Lola Bunny","Hembra");
+        console.log(snoopy);
+        console.log(lolaBunny);
+        /*
+        snoopy.sonar();
+        snoopy.saludar();
+        lolaBunny.sonar();
+        lolaBunny.saludar();
+        */
+
+        console.log("");
+        
+        // forma 2 -> Metodos fuera de la funcion constructora
+        function Animal2(nombre,genero){
+            // Atributos:
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+        // Metodos:
+        Animal2.prototype.sonar = function(){
+            console.log("*Sonidos de animal v2*");
+        }
+        Animal2.prototype.saludar = function(){
+            console.log(`Hola me llamo ${this.nombre} y soy ${this.genero} v2.`);
+        }
+        const snoopy2 = new Animal2("Snoopy","Macho"), 
+              lolaBunny2 = new Animal2("Lola Bunny","Hembra");
+        console.log(snoopy2);
+        console.log(lolaBunny2);              
+        snoopy2.sonar();
+        snoopy2.saludar();
+        lolaBunny2.sonar();
+        lolaBunny2.saludar();
+        
+    </script>
+</body>
+</html>
